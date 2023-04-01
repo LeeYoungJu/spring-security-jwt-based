@@ -1,0 +1,35 @@
+server:
+  port: 9090
+
+spring:
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+logging:
+  level:
+    com.yjlee: DEBUG
+    org:
+      hibernate:
+        type: trace
+
+jwt:
+  header: Authorization
+  secret: eWpsZWUtc3ByaW5nLXNlY3VyaXR5LXN0dWR5LWZvci1uZXh0LXdlZWstZmlyc3QtY2F0Y2h0YWJsZS1jaHVsZ2V1bg
+  token-validity-in-seconds: 86400
